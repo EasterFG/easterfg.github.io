@@ -6,23 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: Java,数据库,JDBC,mysql | EasterFG的博客</title>
+  <title>11周数据库作业 | EasterFG的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="还在前进的道路上努力，目前正在瑟瑟发抖">
-<meta property="og:type" content="website">
-<meta property="og:title" content="EasterFG的博客">
-<meta property="og:url" content="http://yoursite.com/tags/Java-%E6%95%B0%E6%8D%AE%E5%BA%93-JDBC-mysql/index.html">
+  <meta name="description" content="一. 数据表操作 数据表创建123456CREATE TABLE my_name(    id INT(11) AUTO_INCREMENT PRIMARY KEY,    d_name VARCHAR(30) NOT NULL,    manager VARCHAR(30) NOT NULL,	work_num INT(11)); worker表修改操作 (以下都是对worker表的操作，可以忽">
+<meta property="og:type" content="article">
+<meta property="og:title" content="11周数据库作业">
+<meta property="og:url" content="http://yoursite.com/2020/05/01/11%E5%91%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%9C%E4%B8%9A/index.html">
 <meta property="og:site_name" content="EasterFG的博客">
-<meta property="og:description" content="还在前进的道路上努力，目前正在瑟瑟发抖">
+<meta property="og:description" content="一. 数据表操作 数据表创建123456CREATE TABLE my_name(    id INT(11) AUTO_INCREMENT PRIMARY KEY,    d_name VARCHAR(30) NOT NULL,    manager VARCHAR(30) NOT NULL,	work_num INT(11)); worker表修改操作 (以下都是对worker表的操作，可以忽">
 <meta property="og:locale" content="zh">
+<meta property="article:published_time" content="2020-05-01T03:52:55.000Z">
+<meta property="article:modified_time" content="2020-05-01T04:28:13.748Z">
 <meta property="article:author" content="EasterFG">
-<meta property="article:tag" content="IT">
-<meta property="article:tag" content="大学生">
-<meta property="article:tag" content="Java">
-<meta property="article:tag" content="编程">
-<meta property="article:tag" content="学习中">
-<meta property="article:tag" content="萌新">
-<meta property="article:tag" content="Minecraft爱好者">
+<meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="EasterFG的博客" type="application/atom+xml">
@@ -149,60 +145,165 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-11周数据库作业" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/17/Java%E4%B8%AD%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-04-17T11:58:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-17</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/17/Java%E4%B8%AD%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E6%96%B9%E6%B3%95/">Java中连接数据库的方法</a>
+    <h1 class="article-title" itemprop="name">
+      11周数据库作业
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/05/01/11%E5%91%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%9C%E4%B8%9A/" class="archive-article-date">
+  	<time datetime="2020-05-01T03:52:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="一-数据表操作"><a href="#一-数据表操作" class="headerlink" title="一. 数据表操作"></a>一. 数据表操作</h4><ol>
+<li>数据表创建<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> my_name(</span><br><span class="line">    <span class="keyword">id</span> <span class="built_in">INT</span>(<span class="number">11</span>) AUTO_INCREMENT PRIMARY <span class="keyword">KEY</span>,</span><br><span class="line">    d_name <span class="built_in">VARCHAR</span>(<span class="number">30</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    manager <span class="built_in">VARCHAR</span>(<span class="number">30</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">	work_num <span class="built_in">INT</span>(<span class="number">11</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></li>
+<li>worker表修改操作 (以下都是对worker表的操作，可以忽略)<ul>
+<li>数据库更名 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> old_name <span class="keyword">RENAME</span> new_name;</span><br></pre></td></tr></table></figure></li>
+<li>新增额外列<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> worker <span class="keyword">ADD</span> <span class="keyword">COLUMN</span> d_id <span class="built_in">int</span>;</span><br></pre></td></tr></table></figure></li>
+<li>更新数据<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> worker <span class="keyword">SET</span> d_id = <span class="number">3</span> <span class="keyword">WHERE</span> <span class="keyword">id</span> = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">UPDATE</span> worker <span class="keyword">SET</span> d_id = <span class="number">1</span> <span class="keyword">WHERE</span> <span class="keyword">id</span> = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">UPDATE</span> worker <span class="keyword">SET</span> d_id = <span class="number">5</span> <span class="keyword">WHERE</span> <span class="keyword">id</span> = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">UPDATE</span> worker <span class="keyword">SET</span> d_id = <span class="number">2</span> <span class="keyword">WHERE</span> <span class="keyword">id</span> = <span class="number">4</span>;</span><br><span class="line"><span class="keyword">UPDATE</span> worker <span class="keyword">SET</span> d_id = <span class="number">6</span> <span class="keyword">WHERE</span> <span class="keyword">id</span> = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">UPDATE</span> worker <span class="keyword">SET</span> d_id = <span class="number">4</span> <span class="keyword">WHERE</span> <span class="keyword">id</span> = <span class="number">6</span>;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>插入数据<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*方案1*/</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> my_name <span class="keyword">VALUES</span> </span><br><span class="line">	(<span class="number">1</span>, <span class="string">'人事部'</span>, <span class="string">'玛丽'</span>, <span class="number">5</span>), </span><br><span class="line">	(<span class="number">2</span>, <span class="string">'财务部'</span>, <span class="string">'xx1'</span>, <span class="number">3</span>), </span><br><span class="line">	(<span class="number">3</span>, <span class="string">'技术部'</span>, <span class="string">'xx2'</span>, <span class="number">9</span>), </span><br><span class="line">	(<span class="number">4</span>, <span class="string">'销售部'</span>, <span class="string">'xx3'</span>, <span class="number">12</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*方案2*/</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> my_name(<span class="keyword">id</span>, d_name, manager, work_num) <span class="keyword">VALUES</span> </span><br><span class="line">	(<span class="number">1</span>, <span class="string">'人事部'</span>, <span class="string">'玛丽'</span>, <span class="number">5</span>), </span><br><span class="line">	(<span class="number">2</span>, <span class="string">'财务部'</span>, <span class="string">'xx1'</span>, <span class="number">3</span>), </span><br><span class="line">	(<span class="number">3</span>, <span class="string">'技术部'</span>, <span class="string">'xx2'</span>, <span class="number">9</span>), </span><br><span class="line">	(<span class="number">4</span>, <span class="string">'销售部'</span>, <span class="string">'xx3'</span>, <span class="number">12</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*方案3*/</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> my_name(d_name, manager, work_num) <span class="keyword">VALUES</span> </span><br><span class="line">	(<span class="string">'人事部'</span>, <span class="string">'玛丽'</span>, <span class="number">5</span>), </span><br><span class="line">	(<span class="string">'财务部'</span>, <span class="string">'xx1'</span>, <span class="number">3</span>), </span><br><span class="line">	(<span class="string">'技术部'</span>, <span class="string">'xx2'</span>, <span class="number">9</span>), </span><br><span class="line">	(<span class="string">'销售部'</span>, <span class="string">'xx3'</span>, <span class="number">12</span>);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="二-数据库查询"><a href="#二-数据库查询" class="headerlink" title="二. 数据库查询"></a>二. 数据库查询</h4><ol>
+<li>左连接查询<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> s1.d_id, s2.d_name, s1.name <span class="keyword">FROM</span></span><br><span class="line">worker <span class="keyword">AS</span> s1 <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> my_name <span class="keyword">as</span> s2</span><br><span class="line"><span class="keyword">ON</span> s1.d_id = s2.id;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查询结果<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">+----------+----------+--------+</span><br><span class="line">| 员工姓名 | 所属部门 | 部门ID |</span><br><span class="line">+----------+----------+--------+</span><br><span class="line">| 小赵     | 技术部   |      3 |</span><br><span class="line">| 小钱     | 人事部   |      1 |</span><br><span class="line">| 小孙     | NULL     |      5 |</span><br><span class="line">| 小李     | 财务部   |      2 |</span><br><span class="line">| 小周     | NULL     |      6 |</span><br><span class="line">| 小吴     | 销售部   |      4 |</span><br><span class="line">+----------+----------+--------+</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>子查询<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> worker <span class="keyword">WHERE</span> d_id = (<span class="keyword">SELECT</span> <span class="keyword">id</span> <span class="keyword">FROM</span> my_name <span class="keyword">WHERE</span> manager = <span class="string">'玛丽'</span>);</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java,数据库,JDBC,mysql</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/01/11%E5%91%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%9C%E4%B8%9A/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/04/24/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我的第一个博客</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -225,9 +326,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

@@ -28,7 +28,7 @@
     <link rel="alternative" href="/atom.xml" title="EasterFG的博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/assets/img/favicon.png">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -151,6 +151,99 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-11周数据库作业" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/01/11%E5%91%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%9C%E4%B8%9A/">11周数据库作业</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/01/11%E5%91%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%9C%E4%B8%9A/" class="archive-article-date">
+  	<time datetime="2020-05-01T03:52:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="一-数据表操作"><a href="#一-数据表操作" class="headerlink" title="一. 数据表操作"></a>一. 数据表操作</h4><ol>
+<li>数据表创建<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> my_name(</span><br><span class="line">    <span class="keyword">id</span> <span class="built_in">INT</span>(<span class="number">11</span>) AUTO_INCREMENT PRIMARY <span class="keyword">KEY</span>,</span><br><span class="line">    d_name <span class="built_in">VARCHAR</span>(<span class="number">30</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    manager <span class="built_in">VARCHAR</span>(<span class="number">30</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">	work_num <span class="built_in">INT</span>(<span class="number">11</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></li>
+<li>worker表修改操作 (以下都是对worker表的操作，可以忽略)<ul>
+<li>数据库更名 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> old_name <span class="keyword">RENAME</span> new_name;</span><br></pre></td></tr></table></figure></li>
+<li>新增额外列<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> worker <span class="keyword">ADD</span> <span class="keyword">COLUMN</span> d_id <span class="built_in">int</span>;</span><br></pre></td></tr></table></figure></li>
+<li>更新数据<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> worker <span class="keyword">SET</span> d_id = <span class="number">3</span> <span class="keyword">WHERE</span> <span class="keyword">id</span> = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">UPDATE</span> worker <span class="keyword">SET</span> d_id = <span class="number">1</span> <span class="keyword">WHERE</span> <span class="keyword">id</span> = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">UPDATE</span> worker <span class="keyword">SET</span> d_id = <span class="number">5</span> <span class="keyword">WHERE</span> <span class="keyword">id</span> = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">UPDATE</span> worker <span class="keyword">SET</span> d_id = <span class="number">2</span> <span class="keyword">WHERE</span> <span class="keyword">id</span> = <span class="number">4</span>;</span><br><span class="line"><span class="keyword">UPDATE</span> worker <span class="keyword">SET</span> d_id = <span class="number">6</span> <span class="keyword">WHERE</span> <span class="keyword">id</span> = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">UPDATE</span> worker <span class="keyword">SET</span> d_id = <span class="number">4</span> <span class="keyword">WHERE</span> <span class="keyword">id</span> = <span class="number">6</span>;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>插入数据<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*方案1*/</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> my_name <span class="keyword">VALUES</span> </span><br><span class="line">	(<span class="number">1</span>, <span class="string">'人事部'</span>, <span class="string">'玛丽'</span>, <span class="number">5</span>), </span><br><span class="line">	(<span class="number">2</span>, <span class="string">'财务部'</span>, <span class="string">'xx1'</span>, <span class="number">3</span>), </span><br><span class="line">	(<span class="number">3</span>, <span class="string">'技术部'</span>, <span class="string">'xx2'</span>, <span class="number">9</span>), </span><br><span class="line">	(<span class="number">4</span>, <span class="string">'销售部'</span>, <span class="string">'xx3'</span>, <span class="number">12</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*方案2*/</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> my_name(<span class="keyword">id</span>, d_name, manager, work_num) <span class="keyword">VALUES</span> </span><br><span class="line">	(<span class="number">1</span>, <span class="string">'人事部'</span>, <span class="string">'玛丽'</span>, <span class="number">5</span>), </span><br><span class="line">	(<span class="number">2</span>, <span class="string">'财务部'</span>, <span class="string">'xx1'</span>, <span class="number">3</span>), </span><br><span class="line">	(<span class="number">3</span>, <span class="string">'技术部'</span>, <span class="string">'xx2'</span>, <span class="number">9</span>), </span><br><span class="line">	(<span class="number">4</span>, <span class="string">'销售部'</span>, <span class="string">'xx3'</span>, <span class="number">12</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*方案3*/</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> my_name(d_name, manager, work_num) <span class="keyword">VALUES</span> </span><br><span class="line">	(<span class="string">'人事部'</span>, <span class="string">'玛丽'</span>, <span class="number">5</span>), </span><br><span class="line">	(<span class="string">'财务部'</span>, <span class="string">'xx1'</span>, <span class="number">3</span>), </span><br><span class="line">	(<span class="string">'技术部'</span>, <span class="string">'xx2'</span>, <span class="number">9</span>), </span><br><span class="line">	(<span class="string">'销售部'</span>, <span class="string">'xx3'</span>, <span class="number">12</span>);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="二-数据库查询"><a href="#二-数据库查询" class="headerlink" title="二. 数据库查询"></a>二. 数据库查询</h4><ol>
+<li>左连接查询<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> s1.d_id, s2.d_name, s1.name <span class="keyword">FROM</span></span><br><span class="line">worker <span class="keyword">AS</span> s1 <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> my_name <span class="keyword">as</span> s2</span><br><span class="line"><span class="keyword">ON</span> s1.d_id = s2.id;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查询结果<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">+----------+----------+--------+</span><br><span class="line">| 员工姓名 | 所属部门 | 部门ID |</span><br><span class="line">+----------+----------+--------+</span><br><span class="line">| 小赵     | 技术部   |      3 |</span><br><span class="line">| 小钱     | 人事部   |      1 |</span><br><span class="line">| 小孙     | NULL     |      5 |</span><br><span class="line">| 小李     | 财务部   |      2 |</span><br><span class="line">| 小周     | NULL     |      6 |</span><br><span class="line">| 小吴     | 销售部   |      4 |</span><br><span class="line">+----------+----------+--------+</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>子查询<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> worker <span class="keyword">WHERE</span> d_id = (<span class="keyword">SELECT</span> <span class="keyword">id</span> <span class="keyword">FROM</span> my_name <span class="keyword">WHERE</span> manager = <span class="string">'玛丽'</span>);</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/01/11%E5%91%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%9C%E4%B8%9A/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-我的第一个博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -171,9 +264,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="第一章-Java的第一个程序"><a href="#第一章-Java的第一个程序" class="headerlink" title="第一章 Java的第一个程序"></a>第一章 Java的第一个程序</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.print(<span class="string">"hello word"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="1-第一章-Java的第一个程序"><a href="#1-第一章-Java的第一个程序" class="headerlink" title="1. 第一章 Java的第一个程序"></a>1. 第一章 Java的第一个程序</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.print(<span class="string">"hello word"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><em>Bye</em><br><strong>下次一定</strong><br><strong><em>awsl</em></strong></p>
+<h3 id="2-第二章-Java的第一个程序"><a href="#2-第二章-Java的第一个程序" class="headerlink" title="2. 第二章 Java的第一个程序"></a>2. 第二章 Java的第一个程序</h3><h3 id="第三章-Java的第一个程序"><a href="#第三章-Java的第一个程序" class="headerlink" title="第三章 Java的第一个程序"></a>第三章 Java的第一个程序</h3><h3 id="第四章-Java的第一个程序"><a href="#第四章-Java的第一个程序" class="headerlink" title="第四章 Java的第一个程序"></a>第四章 Java的第一个程序</h3><h3 id="第五章-Java的第一个程序"><a href="#第五章-Java的第一个程序" class="headerlink" title="第五章 Java的第一个程序"></a>第五章 Java的第一个程序</h3><h3 id="第六章-Java的第一个程序"><a href="#第六章-Java的第一个程序" class="headerlink" title="第六章 Java的第一个程序"></a>第六章 Java的第一个程序</h3><h3 id="第七章-Java的第一个程序"><a href="#第七章-Java的第一个程序" class="headerlink" title="第七章 Java的第一个程序"></a>第七章 Java的第一个程序</h3><p><em>Bye</em><br><strong>下次一定</strong><br><strong><em>awsl</em></strong></p>
 
       
 
@@ -376,6 +469,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java,数据库,JDBC,mysql</a>
